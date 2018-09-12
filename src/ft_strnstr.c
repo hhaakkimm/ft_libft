@@ -6,7 +6,7 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 01:54:48 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/12 02:11:07 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/12 02:49:14 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t		i;
-	size_t		n;
+	size_t	i;
+	size_t	n;
 	char	*s1;
 	char	*s2;
 
