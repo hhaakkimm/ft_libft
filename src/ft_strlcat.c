@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 01:02:41 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/12 01:14:28 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/12 01:08:56 by aabdrakh          #+#    #+#             */
+/*   Updated: 2018/09/12 01:14:19 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
+	size_t	ans;
 
-	j = 0;
 	i = 0;
-	while (s1[i] != '\0')
+	ans = 0;
+	j = 0;
+	while (dst[i] != '\0')
 		i++;
-	while (s2[j] != '\0' && j < n)
-		s1[i++] = s2[j++];
-	s1[i] = '\0';
-	return (s1);
+	while (src[ans] != '\0')
+		ans++;
+	if (dstsize <= i)
+		ans += dstsize;
+	else
+		ans += i;
+	while (src[j] != '\0' && i + 1 < dstsize)
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (ans);
 }

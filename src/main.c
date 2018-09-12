@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void ft_bzero(void *s, size_t n);
-void *ft_memset(void *b, int c, size_t len);
-void *ft_memcpy(void *restrict dst, void *restrict src, size_t n);
-size_t ft_strlen(const char *s);
+char *ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
 
 int main()
 {
@@ -12,5 +9,6 @@ int main()
 	int a[] = {9, 8 , 7 , 6 , 222, 6, 5};
 	memccpy(arr, a, 0, sizeof(a));
 	char s[] = "Hakeem";
-	printf("%d", ft_strlen(s));
+	char s1[] = "abdul";
+	printf("%s", ft_strncat(s, s1, 3));
 }
