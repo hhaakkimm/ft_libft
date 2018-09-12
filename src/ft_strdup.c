@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   f_strdup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 18:32:34 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/11 21:30:01 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/11 21:21:51 by aabdrakh          #+#    #+#             */
+/*   Updated: 2018/09/11 21:31:52 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdlib.h>
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+char	*strdup(const char *s1)
 {
-	size_t	i;
-	char	*d;
-	char	*s;
+	char	*ans;
+	int		i;
 
 	i = 0;
-	d = (char *)dst;
-	s = (char *)src;
-	while (i < n)
+	ans = malloc(sizeof(*s1));
+	if (!ans)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		d[i] = s[i];
+		ans[i] = s1[i];
 		i++;
 	}
-	return (dst);
+	ans[i] = '\0';
+	return (ans);
 }
