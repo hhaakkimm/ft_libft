@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 19:56:44 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:28:07 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/16 15:18:03 by aabdrakh          #+#    #+#             */
+/*   Updated: 2018/09/16 15:21:16 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <string.h>
 
-void	ft_putstr(char const *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
+	char	*f;
 
+	f = (char *)s;
 	i = 0;
-	while (s[i] != '\0')
+	while (*f != '\0' && i < n)
 	{
-		write(1, &s[i], 1);
+		if (*f == (unsigned char)c)
+			return (f);
+		f++;
 		i++;
 	}
+	return (NULL);
 }

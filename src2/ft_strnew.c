@@ -6,7 +6,7 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 12:52:33 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/13 13:41:42 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 16:26:36 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strnew(size_t size)
 		return (NULL);
 	if (size > 0)
 	{
-		while (len)
+		while (size)
 		{
 			*s++ = '\0';
 			size--;

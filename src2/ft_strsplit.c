@@ -6,9 +6,13 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 19:09:36 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/13 19:28:42 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 16:26:12 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../libft.h"
+#include <string.h>
+#include <stdlib.h>
 
 char	**ft_strsplit(char const *s, char c)
 {
@@ -32,7 +36,8 @@ char	**ft_strsplit(char const *s, char c)
 			while (s[i + 1] != '\0' || s[i + 1] != c)
 				*soz++ = s[i + 1];
 			*soz = '\0';
-			fresh[k++] = ft_strcpy(fresh[k], soz);
+			fresh[k] = ft_strcpy(fresh[k], soz);
+			k++;
 		}
 		i++;
 	}

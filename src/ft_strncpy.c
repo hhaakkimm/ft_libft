@@ -6,23 +6,23 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 22:55:10 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/11 23:04:49 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 14:26:02 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*strncpy(char *dst, const char *src, size_t len)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n && src[i] != '\0')
+	while (i < len && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (i < len)
 	{
 		dst[i] = '\0';
 		i++;

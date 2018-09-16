@@ -6,9 +6,11 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 13:43:12 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 13:44:51 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 16:33:23 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

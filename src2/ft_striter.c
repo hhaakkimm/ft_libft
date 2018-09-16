@@ -6,14 +6,14 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 15:01:19 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/13 15:04:23 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 16:39:32 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
 	if (!s || !f)
-		return;
+		return ;
 	while (*s != '\0')
 	{
 		f(s);

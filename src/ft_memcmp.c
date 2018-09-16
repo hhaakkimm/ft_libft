@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 19:56:44 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:28:07 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/16 15:22:03 by aabdrakh          #+#    #+#             */
+/*   Updated: 2018/09/16 15:52:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <string.h>
 
-void	ft_putstr(char const *s)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	char	*f1;
+	char	*f2;
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	f1 = (char *)s1;
+	f2 = (char *)s2;
+	while (i < n && *f1 && *f2)
 	{
-		write(1, &s[i], 1);
+		if (*f1 != *f2)
+			return (*f1 - *f2);
 		i++;
+		f1++;
+		f2++;
 	}
+	return (0);
 }

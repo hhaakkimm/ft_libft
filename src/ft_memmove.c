@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 14:57:58 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/13 15:00:54 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/16 15:25:31 by aabdrakh          #+#    #+#             */
+/*   Updated: 2018/09/16 15:54:16 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <string.h>
 
-void	ft_strclr(char *s);
-
-int main()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char a[] = "Hakeem";
-	printf("%s\n", a);
-	ft_strclr(a);
-	printf("%s", a);
+	char	*d;
+	char	*s;
+	size_t	i;
+
+	d = (char *)dst;
+	s = (char *)src;
+	i = 0;
+	while (i < len)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dst);
 }
