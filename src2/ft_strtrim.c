@@ -6,7 +6,7 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 18:51:52 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:23:15 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 18:48:29 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strtrim(char const *s)
 	size_t	i;
 	size_t	n;
 
-	fresh = (char *)malloc(ft_strlen(s) + 1);
+	fresh = malloc(ft_strlen(s) + 1);
 	i = 0;
 	n = ft_strlen(s) - 1;
 	if (!fresh)

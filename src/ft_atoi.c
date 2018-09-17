@@ -6,22 +6,23 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 02:33:22 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/12 02:48:09 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 21:29:03 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	long int	sign;
-	long int	nbr;
+	int	i;
+	int	sign;
+	int	nbr;
 
 	i = 0;
 	nbr = 0;
 	sign = 1;
 	if (!str)
 		return (0);
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\r' || str[i] == '\t')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\r' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{

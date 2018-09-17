@@ -6,7 +6,7 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 12:11:07 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/13 12:33:54 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 18:41:17 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memalloc(size_t size)
 	char	*c;
 
 	s = malloc(size);
+	if (!s)
+		return (NULL);
 	if (size > 0)
 	{
 		c = s;

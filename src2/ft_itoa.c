@@ -6,12 +6,25 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 19:28:57 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:34:00 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 18:51:12 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 #include <stdlib.h>
+
+static int	len(int n)
+{
+	int t;
+
+	t = 0;
+	while (n > 0)
+	{
+		n /= 10;
+		t++;
+	}
+	return (t);
+}
 
 char	*ft_itoa(int n)
 {
@@ -23,8 +36,7 @@ char	*ft_itoa(int n)
 	s = 1;
 	k = (n < 0) ? 1 : 0;
 	t = (n < 0) ? (-n) : n;
-	while (n /= 10 > 0)
-		s++;
+	s = len(n);
 	fresh = malloc(sizeof(char) * (s + k));
 	if (!fresh)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 01:15:45 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/12 01:23:07 by aabdrakh         ###   ########.fr       */
+/*   Updated: 2018/09/16 20:05:42 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		if (*s == '\0')
 			return (NULL);
+		s++;
 	}
 	return (NULL);
 }
