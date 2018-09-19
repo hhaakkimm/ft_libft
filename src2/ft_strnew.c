@@ -17,14 +17,16 @@ char	*ft_strnew(size_t size)
 {
 	char	*s;
 
-	s = malloc(sizeof(char) * size);
+	s = (char *)malloc(sizeof(char) * (size + 1));
 	if (s == NULL)
 		return (NULL);
 	if (size > 0)
+	{
 		while (size)
 		{
-			*s++ = '\0';
-			size--;
+			s[size--] = '\0';
 		}
+		s[0] = '\0';
+	}
 	return (s);
 }

@@ -22,6 +22,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	if (!s || !f)
 		return (NULL);
 	c = ft_strnew(ft_strlen(s));
+	if (!c)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{

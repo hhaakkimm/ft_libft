@@ -19,7 +19,7 @@ char	*ft_strtrim(char const *s)
 	size_t	i;
 	size_t	n;
 
-	fresh = malloc(ft_strlen(s) + 1);
+	fresh = (char *)malloc(ft_strlen(s) + 1);
 	i = 0;
 	n = ft_strlen(s) - 1;
 	if (!fresh)

@@ -37,7 +37,7 @@ char	*ft_itoa(int n)
 	k = (n < 0) ? 1 : 0;
 	t = (n < 0) ? (-n) : n;
 	s = len(n);
-	fresh = malloc(sizeof(char) * (s + k));
+	fresh = (char *)malloc(sizeof(char) * (s + k));
 	if (!fresh)
 		return (NULL);
 	fresh[s + k + 1] = '\0';
