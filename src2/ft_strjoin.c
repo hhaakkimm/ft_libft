@@ -16,14 +16,16 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s;
+	int		i;
 
-	s = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	i = 0;
+	s = (char *)malloc((sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1)));
 	if (!s)
 		return (NULL);
 	while (*s1 != '\0')
-		*s++ = *s1++;
+		s[i++] = *s1++;
 	while (*s2 != '\0')
-		*s++ = *s2++;
-	*s = '\0';
+		s[i++] = *s2++;
+	s[i] = '\0';
 	return (s);
 }

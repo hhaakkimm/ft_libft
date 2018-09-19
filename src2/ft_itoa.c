@@ -13,39 +13,33 @@
 #include "../libft.h"
 #include <stdlib.h>
 
-static int	len(int n)
+char		*ft_itoa(int n)
 {
-	int t;
+	char	*a;
+	char	*str;
+	int		i;
+	int		t;
 
-	t = 0;
-	while (n > 0)
-	{
-		n /= 10;
-		t++;
-	}
-	return (t);
-}
-
-char	*ft_itoa(int n)
-{
-	char			*fresh;
-	unsigned int	t;
-	int				k;
-	int				s;
-
-	s = 1;
-	k = (n < 0) ? 1 : 0;
-	t = (n < 0) ? (-n) : n;
-	s = len(n);
-	fresh = (char *)malloc(sizeof(char) * (s + k));
-	if (!fresh)
+	a = (char *)malloc(sizeof(char) * 22);
+	if (!a)
 		return (NULL);
-	fresh[s + k + 1] = '\0';
+	i = 0;
+	t = n;
+	if (n < 0)
+		t = -n;
 	while (t > 0)
 	{
-		fresh[s + k] = (t % 10);
+		a[i++] = (t % 10) + 48;
 		t /= 10;
-		s--;
 	}
-	return (fresh);
+	if (n < 0)
+		a[i++] = '-';
+	str = ft_memalloc((size_t)i + 1);
+	if (n == -2147483648)
+		return ("-2147483648");
+	else if (n == 0)
+		str[0] = '0';
+	while (--i >= 0)
+		str[t++] = a[i];
+	return (str);
 }
