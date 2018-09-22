@@ -10,9 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-
-CC = gcc
 NAME = libft.a
+
 SRC = ft_atoi.c ft_lstmap.c ft_putendl.c ft_strdup.c ft_strnequ.c	
 SRC += ft_bzero.c ft_lstnew.c ft_putendl_fd.c ft_strequ.c ft_strnew.c	
 SRC += ft_isalnum.c ft_memalloc.c ft_putnbr.c ft_striter.c ft_strnstr.c		
@@ -24,22 +23,23 @@ SRC += ft_itoa.c ft_memdel.c ft_strchr.c ft_strmap.c ft_strtrim.c
 SRC += ft_lstadd.c ft_memmove.c ft_strclr.c ft_strmapi.c ft_tolower.c	
 SRC += ft_lstdel.c ft_memset.c ft_strcmp.c ft_strncat.c ft_toupper.c	
 SRC += ft_lstdelone.c ft_putchar.c ft_strcpy.c ft_strncmp.c	
-SRC += ft_lstiter.c ft_putchar_fd.c ft_strdel.c ft_strncpy.c	
-HEADER_D = libft.h
-OBJECTS = ./*.o
-FLAGS = -c -Wall -Wextra -Werror
+SRC += ft_lstiter.c ft_putchar_fd.c ft_strdel.c ft_strncpy.c
+
+OBJECTS = *.o
+
+INCLUDE = libft.h
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) $(SRC) -I $(HEADER_D)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	@gcc -c -Wall -Wextra -Werror $(SRC) -I $(INCLUDE)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
 
 clean:
-	 /bin/rm -f $(OBJECTS)
+	@/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
