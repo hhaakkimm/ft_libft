@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-static size_t	ft_count_words(char const *s, char c)
+static size_t	ft_count(char const *s, char c)
 {
 	size_t	cnt;
 
@@ -28,7 +28,7 @@ static size_t	ft_count_words(char const *s, char c)
 	return (cnt);
 }
 
-static size_t	ft_count_letters(char const *str, char c)
+static size_t	ft_length(char const *str, char c)
 {
 	size_t	cnt;
 
@@ -50,14 +50,14 @@ char			**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (!s || !c)
 		return ((void *)0);
-	words = ft_count_words(s, c);
+	words = ft_count(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * words)))
 		return (NULL);
 	while (i < words)
 	{
 		while (*s == c && *s)
 			s++;
-		tab[i] = (char *)malloc(sizeof(char) * (10000));
+		tab[i] = (char *)malloc(sizeof(char) * (ft_length(s, c)));
 		j = 0;
 		while (*s != c && *s)
 			tab[i][j++] = *s++;
