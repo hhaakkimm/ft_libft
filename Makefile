@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-SRCS = src/*.c src2/*.c
+SRCS = src/*.c src2/*.c src3/*.c
 
 OBJECTS = *.o
 
