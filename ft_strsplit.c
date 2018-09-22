@@ -57,7 +57,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c && *s)
 			s++;
-		tab[i] = (char *)malloc(sizeof(char) * (ft_length(s, c)));
+		tab[i] = (char *)malloc(sizeof(char) * (ft_length(s, c) + 1));
 		j = 0;
 		while (*s != c && *s)
 			tab[i][j++] = *s++;
