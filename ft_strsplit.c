@@ -28,42 +28,16 @@ static size_t	ft_count_words(char const *s, char c)
 	return (cnt);
 }
 
-// char			**ft_strsplit(char const *s, char c)
-// {
-// 	size_t		i;
-// 	size_t		j;
-// 	size_t		words;
-// 	char		**tab;
-
-// 	i = 0;
-// 	if (!s || !c)
-// 		return ((void *)0);
-// 	words = ft_count_words(s, c);
-// 	if (!(tab = (char **)malloc(sizeof(char *) * words)))
-// 		return (NULL);
-// 	while (i < words)
-// 	{
-// 		while (*s == c && *s)
-// 			s++;
-// 		tab[i] = (char *)malloc(sizeof(char) * (10000));
-// 		j = 0;
-// 		while (*s != c && *s)
-// 			tab[i][j++] = *s++;
-// 		tab[i][j] = '\0';
-// 		i++;
-// 	}
-// 	tab[i] = 0;
-// 	return (tab);
-// }
-
 static size_t	ft_count_letters(char const *str, char c)
 {
-	size_t	count;
+	size_t	cnt;
 
-	count = 0;
-	while (str[count] != c && str[count])
-		count++;
-	return (count);
+	cnt = 0;
+	if (!str)
+		return (0);
+	while (str[cnt] != c && str[cnt])
+		cnt++;
+	return (cnt);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -77,13 +51,13 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s || !c)
 		return ((void *)0);
 	words = ft_count_words(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (words + 1))))
+	if (!(tab = (char **)malloc(sizeof(char *) * words)))
 		return (NULL);
 	while (i < words)
 	{
 		while (*s == c && *s)
 			s++;
-		tab[i] = (char *)malloc(sizeof(char) * (ft_count_letters(s, c) + 1));
+		tab[i] = (char *)malloc(sizeof(char) * (10000));
 		j = 0;
 		while (*s != c && *s)
 			tab[i][j++] = *s++;
