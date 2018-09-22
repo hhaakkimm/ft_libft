@@ -25,7 +25,7 @@ SRC += ft_lstdel.c ft_memset.c ft_strcmp.c ft_strncat.c ft_toupper.c
 SRC += ft_lstdelone.c ft_putchar.c ft_strcpy.c ft_strncmp.c	
 SRC += ft_lstiter.c ft_putchar_fd.c ft_strdel.c ft_strncpy.c
 
-OBJECTS = *.o
+OBJECTS = ./*.o
 
 INCLUDE = libft.h
 
