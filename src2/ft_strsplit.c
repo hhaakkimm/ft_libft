@@ -14,32 +14,44 @@
 #include <string.h>
 #include <stdlib.h>
 
-char	**ft_strsplit(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	char	**fresh;
-	char	*soz;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	cnt;
 
-	fresh = (char **)malloc(ft_strlen(s) * 100);
-	i = 0;
-	k = 0;
-	if (!fresh)
-		return (NULL);
-	while (s[i] != '\0')
+	cnt = 0;
+	while (*s)
 	{
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
+				cnt++;
+		s++;
+	}
+	return (cnt);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	size_t		i;
+	size_t		j;
+	size_t		words;
+	char		**tab;
+
+	i = 0;
+	if (!s || !c)
+		return ((void *)0);
+	words = ft_count_words(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * words)))
+		return (NULL);
+	while (i < words)
+	{
+		while (*s == c && *s)
+			s++;
+		tab[i] = (char *)malloc(sizeof(char) * (10000));
 		j = 0;
-		if (s[i] == c && s[i + 1] != c)
-		{
-			soz = (char *)malloc(100);
-			while (s[i + 1] != '\0' || s[i + 1] != c)
-				*soz++ = s[i + 1];
-			*soz = '\0';
-			fresh[k] = ft_strcpy(fresh[k], soz);
-			k++;
-		}
+		while (*s != c && *s)
+			tab[i][j++] = *s++;
+		tab[i][j] = '\0';
 		i++;
 	}
-	return (fresh);
+	tab[i] = 0;
+	return (tab);
 }
