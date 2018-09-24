@@ -13,7 +13,7 @@
 void	ft_strclr(char *s)
 {
 	if (!s)
-		return;
+		return ;
 	while (*s != '\0')
 		*s++ = '\0';
 }

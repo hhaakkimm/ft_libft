@@ -30,8 +30,7 @@ char	*ft_strtrim(char const *s)
 		i++;
 		n--;
 	}
-	if (n <= 0)
-		n = 0;
+	n = (n <= 0) ? 0 : n;
 	str = (char *)malloc(sizeof(char) * (n + 1));
 	if (!str)
 		return (NULL);

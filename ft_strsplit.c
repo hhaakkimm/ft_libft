@@ -22,7 +22,7 @@ static size_t	ft_count(char const *s, char c)
 	while (*s)
 	{
 		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
-				cnt++;
+			cnt++;
 		s++;
 	}
 	return (cnt);

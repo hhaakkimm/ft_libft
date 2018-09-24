@@ -26,7 +26,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 	{
 		s1[i] = s2[i];
 		if (s2[i] == (unsigned char)c)
-			return ((void *) &(s1[i + 1]));
+			return ((void *)&(s1[i + 1]));
 		i++;
 	}
 	return (NULL);
