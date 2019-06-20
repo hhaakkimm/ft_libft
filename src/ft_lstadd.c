@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/20 12:20:28 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/20 12:20:30 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/20 12:21:00 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 #include <stdlib.h>
 #include <string.h>
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	del((*alst)->content, (*alst)->content_size);
-	ft_memdel((void **)alst);
+	new->next = (*alst);
+	*alst = new;
 }

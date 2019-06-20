@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 18:38:22 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 18:45:14 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/20 12:20:47 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	i;
+	t_list	*t;
 
-	i = 0;
-	if (!s1 || !s2)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	if ((*alst))
 	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
+		t = (*alst)->next;
+		ft_lstdelone(alst, del);
+		ft_lstdel(&(t), del);
 	}
-	return (1);
 }

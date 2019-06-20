@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   f_strdup.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/11 21:21:51 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 19:49:49 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/16 15:25:31 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "../includes/libft.h"
 #include <stdlib.h>
-#include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*ans;
-	int		i;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
 	i = 0;
-	ans = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!ans)
-		return (NULL);
-	while (s1[i] != '\0')
+	d = (char *)dst;
+	s = (char *)src;
+	if (d < s)
 	{
-		ans[i] = s1[i];
-		i++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
-	ans[i] = '\0';
-	return (ans);
+	else
+	{
+		while (len-- > 0)
+		{
+			d[len] = s[len];
+		}
+	}
+	return (dst);
 }

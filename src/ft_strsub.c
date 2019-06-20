@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 15:10:14 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:38:35 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/13 18:39:17 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include "../includes/libft.h"
 #include <stdlib.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*c;
+	char	*f;
 	size_t	i;
 
-	if (!s || !f)
+	if (s == NULL)
 		return (NULL);
-	c = ft_strnew(ft_strlen(s));
-	if (!c)
+	if (start > ft_strlen(s))
+		return (NULL);
+	f = (char *)malloc(sizeof(char) * (len + 1));
+	if (!f)
 		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < len && s[start] != '\0')
 	{
-		c[i] = (*f)(s[i]);
-		i++;
+		f[i++] = s[start++];
 	}
-	return (c);
+	f[i] = '\0';
+	return (f);
 }

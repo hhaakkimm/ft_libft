@@ -3,27 +3,27 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/16 14:02:05 by aabdrakh          #+#    #+#              #
-#    Updated: 2018/09/22 12:34:40 by aabdrakh         ###   ########.fr        #
+#    Updated: 2019/06/20 15:28:00 by aabdrakh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_atoi.c ft_lstmap.c ft_putendl.c ft_strdup.c ft_strnequ.c	
-SRC += ft_bzero.c ft_lstnew.c ft_putendl_fd.c ft_strequ.c ft_strnew.c	
-SRC += ft_isalnum.c ft_memalloc.c ft_putnbr.c ft_striter.c ft_strnstr.c		
-SRC += ft_isalpha.c ft_memccpy.c ft_putnbr_fd.c ft_striteri.c ft_strrchr.c	
-SRC += ft_isascii.c ft_memchr.c ft_putstr.c ft_strjoin.c ft_strsplit.c	
-SRC += ft_isdigit.c ft_memcmp.c ft_putstr_fd.c ft_strlcat.c ft_strstr.c	
-SRC += ft_isprint.c ft_memcpy.c ft_strcat.c ft_strlen.c ft_strsub.c	
-SRC += ft_itoa.c ft_memdel.c ft_strchr.c ft_strmap.c ft_strtrim.c	
-SRC += ft_lstadd.c ft_memmove.c ft_strclr.c ft_strmapi.c ft_tolower.c	
-SRC += ft_lstdel.c ft_memset.c ft_strcmp.c ft_strncat.c ft_toupper.c	
-SRC += ft_lstdelone.c ft_putchar.c ft_strcpy.c ft_strncmp.c	
-SRC += ft_lstiter.c ft_putchar_fd.c ft_strdel.c ft_strncpy.c
+SRC = src/ft_atoi.c src/ft_lstmap.c src/ft_putendl.c src/ft_strdup.c src/ft_strnequ.c	
+SRC += src/ft_bzero.c src/ft_lstnew.c src/ft_putendl_fd.c src/ft_strequ.c src/ft_strnew.c	
+SRC += src/ft_isalnum.c src/ft_memalloc.c src/ft_putnbr.c src/ft_striter.c src/ft_strnstr.c		
+SRC += src/ft_isalpha.c src/ft_memccpy.c src/ft_putnbr_fd.c src/ft_striteri.c src/ft_strrchr.c	
+SRC += src/ft_isascii.c src/ft_memchr.c src/ft_putstr.c src/ft_strjoin.c src/ft_strsplit.c	
+SRC += src/ft_isdigit.c src/ft_memcmp.c src/ft_putstr_fd.c src/ft_strlcat.c src/ft_strstr.c	
+SRC += src/ft_isprint.c src/ft_memcpy.c src/ft_strcat.c src/ft_strlen.c src/ft_strsub.c	
+SRC += src/ft_itoa.c src/ft_memdel.c src/ft_strchr.c src/ft_strmap.c src/ft_strtrim.c	
+SRC += src/ft_lstadd.c src/ft_memmove.c src/ft_strclr.c src/ft_strmapi.c src/ft_tolower.c	
+SRC += src/ft_lstdel.c src/ft_memset.c src/ft_strcmp.c src/ft_strncat.c src/ft_toupper.c	
+SRC += src/ft_lstdelone.c src/ft_putchar.c src/ft_strcpy.c src/ft_strncmp.c	
+SRC += src/ft_lstiter.c src/ft_putchar_fd.c src/ft_strdel.c src/ft_strncpy.c
 
 OBJECTS = *.o
 

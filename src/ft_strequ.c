@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 20:00:23 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 16:36:49 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/13 18:35:48 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#include "../includes/libft.h"
 
-void	ft_putnbr(int n)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	unsigned int	num;
-	char			c;
+	int	i;
 
-	if (n < 0)
+	i = 0;
+	if (!s1 || !s2 || ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	while (s1[i] == s2[i])
 	{
-		write(1, "-", 1);
-		num = (-1) * n;
+		if (!s1[i] && !s2[i])
+			return (1);
+		i++;
 	}
-	else
-		num = n;
-	if (num > 9)
-		ft_putnbr(num / 10);
-	c = num % 10 + '0';
-	write(1, &c, 1);
+	return (0);
 }

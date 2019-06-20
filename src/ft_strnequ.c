@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aabdrakh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabdrakh <aabdrakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 18:35:48 by aabdrakh          #+#    #+#             */
-/*   Updated: 2018/09/16 18:44:30 by aabdrakh         ###   ########.fr       */
+/*   Created: 2018/09/13 18:38:22 by aabdrakh          #+#    #+#             */
+/*   Updated: 2019/06/20 15:28:56 by aabdrakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-int	ft_strequ(char const *s1, char const *s2)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s1 || !s2 || ft_strlen(s1) != ft_strlen(s2))
+	if (!s1 || !s2)
 		return (0);
-	while (s1[i] == s2[i])
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
-		if (!s1[i] && !s2[i])
-			return (1);
+		if (s1[i] != s2[i])
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
